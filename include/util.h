@@ -1,8 +1,6 @@
 #ifndef __UTIL_H__
 #define __UTIL_H__
 
-#include "ray.h"
-#include "vec3.h"
 #include <cmath>
 #include <functional>
 #include <limits>
@@ -20,7 +18,12 @@ inline double random_double() {
     return rand_generator();
 }
 
-
-
+inline double clamp(double x, double minx, double maxx) {
+    if (x < minx)
+        return minx;
+    if (x > maxx)
+        return maxx;
+    return x;
+}
 
 #endif

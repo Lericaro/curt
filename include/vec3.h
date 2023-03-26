@@ -7,15 +7,8 @@
 #include <cstddef>
 #include <cstdint>
 #include <iostream>
+#include <util.h>
 
-
-inline double clamp(double x, double maxx, double minx) {
-    if (x < minx)
-        return minx;
-    if (x > maxx)
-        return maxx;
-    return x;
-}
 
 struct vec3 {
 

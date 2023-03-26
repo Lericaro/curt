@@ -1,9 +1,9 @@
-#include <hittable.h>
-#include <vec3.h>
 #include <bits/stdc++.h>
+#include <hittable.h>
 #include <hittable_list.h>
 #include <sphere.h>
 #include <util.h>
+#include <vec3.h>
 
 #include <camera.h>
 auto ray_color(const ray &r, const hittable &world) {
@@ -31,8 +31,8 @@ int main() {
     camera cam;
 
     hittable_list world;
-    world.add(std::make_shared<sphere>(vec3{0, -100.5, -1}, 100));
     world.add(std::make_shared<sphere>(vec3{0, 0, -1}, 0.5));
+    world.add(std::make_shared<sphere>(vec3{0, -100.5, -1}, 100));
 
     for (int j = image_height - 1; j >= 0; --j) {
         std::cerr << "\rScanlines remaining: " << j << ' ' << std::flush;

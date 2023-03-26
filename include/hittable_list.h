@@ -24,7 +24,7 @@ inline bool hittable_list::hit(const ray &r, double tmin, double tmax,
     auto closest_so_far = tmax;
 
     for (auto &&object : objects) {
-        if (object->hit(r, tmin, tmax, temp_rec)) {
+        if (object->hit(r, tmin, closest_so_far, temp_rec)) {
             hit_anything = 1;
             closest_so_far = temp_rec.t;
             rec = temp_rec;

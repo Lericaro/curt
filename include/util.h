@@ -17,6 +17,10 @@ inline double random_double() {
         std::bind(distribution, generator);
     return rand_generator();
 }
+inline double random_double(double min, double max) {
+    // Returns a random real in [min,max).
+    return min + (max - min) * random_double();
+}
 
 inline double clamp(double x, double minx, double maxx) {
     if (x < minx)

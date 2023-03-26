@@ -2,10 +2,15 @@
 #define __HITABLE_H__
 
 #include "vec3.h"
+#include <memory>
 #include <ray.h>
+class material;
+
 struct hit_record {
     vec3 p;
     vec3 normal;
+
+    std::shared_ptr<material> pmaterial;
     double t;
     bool front_face;
 
@@ -20,5 +25,5 @@ class hittable {
     virtual bool hit(const ray &r, double t_min, double t_max,
                      hit_record &rec) const = 0;
 };
- 
+
 #endif
